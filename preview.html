@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Phishing Awareness Training</title>
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+.container {
+    padding: 20px;
+}
+.card {
+    background: #1e293b;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    background: #22c55e;
+    color: white;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1>🔐 Phishing Awareness Training</h1>
+
+<div class="card">
+<h2>📌 What is Phishing?</h2>
+<p>Phishing is a cyber attack where attackers trick users into giving sensitive information like passwords or bank details.</p>
+</div>
+
+<div class="card">
+<h2>⚠️ How to Identify Phishing Emails</h2>
+<ul>
+<li>Suspicious sender email</li>
+<li>Urgent or threatening language</li>
+<li>Fake links</li>
+<li>Spelling mistakes</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🌐 Fake Website Example</h2>
+<p>Check URL carefully: https://amaz0n-login.com ❌</p>
+<p>Real: https://amazon.com ✅</p>
+</div>
+
+<div class="card">
+<h2>🧠 Quiz</h2>
+<p>Is this phishing? "Your bank account is locked! Click here to verify."</p>
+<button onclick="checkAnswer()">Check Answer</button>
+<p id="result"></p>
+</div>
+
+</div>
+
+<script>
+function checkAnswer() {
+    document.getElementById("result").innerHTML = "✅ Correct! This is a phishing attempt.";
+}
+</script>
+
+</body>
+</html>
