@@ -3,71 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <title>Phishing Awareness Training</title>
+
 <style>
 body {
     font-family: Arial;
+    margin: 0;
     background: #0f172a;
     color: white;
-    text-align: center;
 }
+
+header {
+    background: #020617;
+    padding: 20px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
 .container {
     padding: 20px;
 }
+
 .card {
     background: #1e293b;
-    margin: 20px;
     padding: 20px;
+    margin: 20px 0;
     border-radius: 10px;
+    transition: 0.3s;
 }
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    color: #38bdf8;
+}
+
 button {
-    padding: 10px 20px;
+    padding: 10px 15px;
     margin-top: 10px;
     border: none;
+    border-radius: 5px;
     background: #22c55e;
     color: white;
     cursor: pointer;
+}
+
+button:hover {
+    background: #16a34a;
+}
+
+.quiz-option {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    background: #334155;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.correct {
+    background: green !important;
+}
+
+.wrong {
+    background: red !important;
+}
+
+#score {
+    font-size: 20px;
+    margin-top: 10px;
 }
 </style>
 </head>
 
 <body>
-<div class="container">
 
-<h1>🔐 Phishing Awareness Training</h1>
+<header>
+🔐 Phishing Awareness Training
+</header>
+
+<div class="container">
 
 <div class="card">
 <h2>📌 What is Phishing?</h2>
-<p>Phishing is a cyber attack where attackers trick users into giving sensitive information like passwords or bank details.</p>
+<p>Phishing is a cyberattack where attackers impersonate trusted organizations to steal sensitive data such as passwords, credit card details, or OTPs.</p>
+<p>It commonly occurs via emails, fake websites, SMS, or calls.</p>
 </div>
 
 <div class="card">
-<h2>⚠️ How to Identify Phishing Emails</h2>
+<h2>⚠️ How to Recognize Phishing Emails</h2>
 <ul>
-<li>Suspicious sender email</li>
+<li>Fake or misspelled sender email</li>
 <li>Urgent or threatening language</li>
-<li>Fake links</li>
-<li>Spelling mistakes</li>
+<li>Suspicious links</li>
+<li>Grammar mistakes</li>
+<li>Unexpected attachments</li>
 </ul>
 </div>
 
 <div class="card">
-<h2>🌐 Fake Website Example</h2>
-<p>Check URL carefully: https://amaz0n-login.com ❌</p>
-<p>Real: https://amazon.com ✅</p>
+<h2>🌐 Fake Website Detection</h2>
+<p>❌ Fake: https://amaz0n-login-secure.com</p>
+<p>✅ Real: https://www.amazon.com</p>
+<p>Always check HTTPS, domain spelling, and avoid extra words.</p>
 </div>
 
 <div class="card">
-<h2>🧠 Quiz</h2>
-<p>Is this phishing? "Your bank account is locked! Click here to verify."</p>
-<button onclick="checkAnswer()">Check Answer</button>
-<p id="result"></p>
+<h2>🧠 Social Engineering Tactics</h2>
+<ul>
+<li>Fear: "Your account is hacked!"</li>
+<li>Urgency: "Act now!"</li>
+<li>Authority: Pretending to be bank/government</li>
+<li>Curiosity: "You received money!"</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🛡️ Prevention Tips</h2>
+<ul>
+<li>Never click unknown links</li>
+<li>Verify sender identity</li>
+<li>Enable 2FA</li>
+<li>Do not share OTPs</li>
+<li>Use antivirus software</li>
+<li>Keep system updated</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>🌍 Real-World Example</h2>
+<p>Email: "Your bank account is suspended. Click here to verify."</p>
+<p>User clicks → enters credentials → attacker steals data.</p>
+</div>
+
+<div class="card">
+<h2>🧩 Quiz</h2>
+
+<p>1. "You won $1000! Click now!"</p>
+<div class="quiz-option" onclick="check(this, true)">Yes (Phishing)</div>
+<div class="quiz-option" onclick="check(this, false)">No</div>
+
+<p>2. https://secure-paypal-login.com</p>
+<div class="quiz-option" onclick="check(this, true)">Fake</div>
+<div class="quiz-option" onclick="check(this, false)">Real</div>
+
+<p id="score">Score: 0</p>
+
 </div>
 
 </div>
 
 <script>
-function checkAnswer() {
-    document.getElementById("result").innerHTML = "✅ Correct! This is a phishing attempt.";
+let score = 0;
+
+function check(element, correct) {
+    if (correct) {
+        element.classList.add("correct");
+        score++;
+    } else {
+        element.classList.add("wrong");
+    }
+    document.getElementById("score").innerText = "Score: " + score;
 }
 </script>
 
