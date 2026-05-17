@@ -1,172 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Phishing Awareness Training</title>
-
-<style>
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #0f172a;
-    color: white;
-}
-
-header {
-    background: #020617;
-    padding: 20px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.container {
-    padding: 20px;
-}
-
-.card {
-    background: #1e293b;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: scale(1.02);
-}
-
-h2 {
-    color: #38bdf8;
-}
-
-button {
-    padding: 10px 15px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #22c55e;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #16a34a;
-}
-
-.quiz-option {
-    display: block;
-    margin: 10px;
-    padding: 10px;
-    background: #334155;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.correct {
-    background: green !important;
-}
-
-.wrong {
-    background: red !important;
-}
-
-#score {
-    font-size: 20px;
-    margin-top: 10px;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phishing Awareness Training | CodeAlpha</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
+    body { background:#0b1220; color:#e6edf3; }
+    header { background:#111a2b; padding:20px; text-align:center; border-bottom:1px solid #1f2a44; }
+    header h1 { color:#4ade80; font-size:2rem; }
+    nav { display:flex; justify-content:center; gap:20px; margin-top:10px; }
+    nav a { color:#9fb3c8; text-decoration:none; font-size:0.95rem; }
+    nav a:hover { color:#4ade80; }
+    section { padding:60px 20px; max-width:1000px; margin:auto; }
+    h2 { color:#4ade80; margin-bottom:15px; }
+    .card { background:#111a2b; padding:20px; border-radius:12px; margin-bottom:20px; box-shadow:0 10px 20px rgba(0,0,0,0.3); }
+    .quiz button { margin-top:10px; padding:10px 15px; border:none; border-radius:6px; background:#4ade80; cursor:pointer; }
+    .quiz button:hover { background:#22c55e; }
+    footer { text-align:center; padding:20px; border-top:1px solid #1f2a44; color:#9fb3c8; }
+    .highlight { color:#22c55e; }
+  </style>
 </head>
-
 <body>
 
 <header>
-🔐 Phishing Awareness Training
+  <h1>Phishing Awareness Training</h1>
+  <p>Cyber Security Internship Project @ CodeAlpha</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#identify">Identify</a>
+    <a href="#examples">Examples</a>
+    <a href="#quiz">Quiz</a>
+  </nav>
 </header>
 
-<div class="container">
+<section id="about">
+  <h2>📌 What is Phishing?</h2>
+  <div class="card">
+    <p>Phishing is a cyber attack where attackers trick users into revealing sensitive information such as passwords, credit card numbers, or personal data by pretending to be a trustworthy entity.</p>
+  </div>
+</section>
 
-<div class="card">
-<h2>📌 What is Phishing?</h2>
-<p>Phishing is a cyberattack where attackers impersonate trusted organizations to steal sensitive data such as passwords, credit card details, or OTPs.</p>
-<p>It commonly occurs via emails, fake websites, SMS, or calls.</p>
-</div>
+<section id="identify">
+  <h2>🔍 How to Identify Phishing</h2>
+  <div class="card">
+    <ul>
+      <li>Check suspicious email addresses</li>
+      <li>Look for spelling or grammar mistakes</li>
+      <li>Avoid clicking unknown links</li>
+      <li>Verify website URLs carefully</li>
+      <li>Be cautious of urgent or threatening messages</li>
+    </ul>
+  </div>
+</section>
 
-<div class="card">
-<h2>⚠️ How to Recognize Phishing Emails</h2>
-<ul>
-<li>Fake or misspelled sender email</li>
-<li>Urgent or threatening language</li>
-<li>Suspicious links</li>
-<li>Grammar mistakes</li>
-<li>Unexpected attachments</li>
-</ul>
-</div>
+<section id="examples">
+  <h2>⚠️ Fake Website Example</h2>
+  <div class="card">
+    <p>Example: <span class="highlight">www.paypa1.com</span> (Fake)</p>
+    <p>Always verify domain names carefully. Attackers often use similar-looking characters.</p>
+  </div>
+</section>
 
-<div class="card">
-<h2>🌐 Fake Website Detection</h2>
-<p>❌ Fake: https://amaz0n-login-secure.com</p>
-<p>✅ Real: https://www.amazon.com</p>
-<p>Always check HTTPS, domain spelling, and avoid extra words.</p>
-</div>
+<section id="quiz">
+  <h2>🧠 Quick Quiz</h2>
+  <div class="card quiz">
+    <p><strong>Question:</strong> Is this link safe? <br> http://secure-login-bank.xyz</p>
+    <button onclick="checkAnswer(false)">Safe</button>
+    <button onclick="checkAnswer(true)">Phishing</button>
+    <p id="result"></p>
+  </div>
+</section>
 
-<div class="card">
-<h2>🧠 Social Engineering Tactics</h2>
-<ul>
-<li>Fear: "Your account is hacked!"</li>
-<li>Urgency: "Act now!"</li>
-<li>Authority: Pretending to be bank/government</li>
-<li>Curiosity: "You received money!"</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>🛡️ Prevention Tips</h2>
-<ul>
-<li>Never click unknown links</li>
-<li>Verify sender identity</li>
-<li>Enable 2FA</li>
-<li>Do not share OTPs</li>
-<li>Use antivirus software</li>
-<li>Keep system updated</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>🌍 Real-World Example</h2>
-<p>Email: "Your bank account is suspended. Click here to verify."</p>
-<p>User clicks → enters credentials → attacker steals data.</p>
-</div>
-
-<div class="card">
-<h2>🧩 Quiz</h2>
-
-<p>1. "You won $1000! Click now!"</p>
-<div class="quiz-option" onclick="check(this, true)">Yes (Phishing)</div>
-<div class="quiz-option" onclick="check(this, false)">No</div>
-
-<p>2. https://secure-paypal-login.com</p>
-<div class="quiz-option" onclick="check(this, true)">Fake</div>
-<div class="quiz-option" onclick="check(this, false)">Real</div>
-
-<p id="score">Score: 0</p>
-
-</div>
-
-</div>
+<footer>
+  <p>Created by <strong>Ali Zaib</strong> | Cyber Security Intern</p>
+</footer>
 
 <script>
-let score = 0;
-
-function check(element, correct) {
-    if (correct) {
-        element.classList.add("correct");
-        score++;
+  function checkAnswer(correct) {
+    const result = document.getElementById('result');
+    if(correct) {
+      result.innerHTML = '✅ Correct! This is a phishing link.';
+      result.style.color = '#4ade80';
     } else {
-        element.classList.add("wrong");
+      result.innerHTML = '❌ Incorrect. This is actually a phishing link.';
+      result.style.color = '#ef4444';
     }
-    document.getElementById("score").innerText = "Score: " + score;
-}
+  }
 </script>
 
 </body>
